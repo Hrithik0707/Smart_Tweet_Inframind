@@ -1,0 +1,11 @@
+
+{% if clt_div %}
+{{ clt_div|safe}}
+{% endif %}
+{% if not plt_div %}
+<a href="{% url 'useranalytics' %}"><button type="button" class="input btn" id="btn2" value="0">GET My Tweet Analysis</button></a>
+{% endif %}
+{% if plt_div %}
+<h4>{{ user.username}}'s Analysis</h4>
+{{ plt_div|safe}}
+{% endif %}

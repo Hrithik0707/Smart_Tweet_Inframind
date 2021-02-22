@@ -1,0 +1,17 @@
+{% extends "User/base.html"%}
+{% block content%}
+ 
+ <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+ 
+ 
+<section id="graph">
+<br/>
+<center><h2 class="">Smart Tweet Analysis</h2></center>
+ <br/>
+{% include 'tweet/graphs.html' %}
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% comment %} <script src="{% static 'Cars/js/main.js' %}"></script> {% endcomment %}
+{% endblock content%}

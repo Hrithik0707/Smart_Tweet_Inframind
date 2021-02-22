@@ -1,0 +1,32 @@
+{% extends "User/base.html" %}
+{% block content %}
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <div class="container">
+        <div class="well">
+            <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="{{ object.author.profile.image.url }}">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">{{ object.user.username }}</h4></a>
+                <p class="text-right">{{ object.user.name }}</p></a>
+                <p>{{ object.content }}</p>
+                <ul class="list-inline list-unstyled">
+                    <li><span><i class="glyphicon glyphicon-calendar"></i>{{ object.timestamp|date:"F d, Y" }}</span></li>
+                  <li>|</li>
+                 </ul>
+             </div>
+          </div>
+        </div>
+        {% if object.user == user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="">Delete</a>
+          </div>
+        {% endif %}
+    </div> 
+
+{% endblock content %}
+
